@@ -1,0 +1,20 @@
+<view class="container">
+  <view class="top-state">
+    <text>TURN OFF</text>
+  </view>
+  <image class="shoes-background" src="../../assets/shoes.png" mode="aspectFill" />
+  <view class="model">
+    <view class="model-item {{current == index ? 'active' : ''}}" wx:for="{{stateList}}" bindtap="switchState" data-index="{{index}}">
+      <image src="{{item.imgActive}}" mode="aspectFill" wx:if="{{current == index}}" />
+      <image src="{{item.img}}" mode="aspectFill" wx:else />
+    </view>
+  </view>
+  <view class="section section_gap">
+    <text class="section__title">{{celsius}}°</text>
+    <view class="body-view">
+      <text>-</text>
+      <slider bindchanging="sliderchange" min="30" max="50" backgroundColor="#d4e5f5" activeColor="#70acf5" />
+      <text>+</text>
+    </view>
+  </view>
+</view>
